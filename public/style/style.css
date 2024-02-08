@@ -15,6 +15,12 @@ html {
   --primaryFont: 'Hahmlet', serif;
 
 }
+
+ul li {
+  list-style: none;
+  margin-top: 40px;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -38,6 +44,7 @@ h1 {
 
 }
 p {
+  display: flex;
   font-family: var(--primaryFont);
   color: var(--textColor);
   font-size: 1.5em;
@@ -47,35 +54,15 @@ p {
 }
 
 h2 {
+  font-size: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
-  color:#FFFDD1;
-  margin-top: 20px;
-}
-h3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  color:#FFFDD1;
-  margin-top: 20px;
-  font-size: 1.5em;
-}
-.p2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  color:#FFFDD1;
-  margin-top: 10px;
-  font-size: 14px;
-  margin-left: 20px;
-  margin-right: 20px;
+  color: var(--textColor);
+  margin-top: 70px;
+  text-transform: uppercase;
 }
 
 /* hier staat image1 ipv img zodat ik alle fotos kan onderscheiden en verschillende properties kan toepassen */
@@ -110,6 +97,7 @@ h3 {
   transform-style: preserve-3d;
   border: 1px solid black;
   border-radius: 10px;
+  background: #F2EFE6;
 }
 /* De transition property zorgt ervor dat er een animatie op de 180 graden flip zit */
 /* De preserve-3d property staat er zodat mijn card word behandeld als een 3d object. Zonder deze property liggen de kaarten niet de juiste kant op.*/
@@ -127,7 +115,7 @@ h3 {
   /* Hier staat backface-visibility hidden zodat elke keer de achterkant niet zichtbaar is */
 
 .front {
-  background: #F2EFE6;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,6 +129,5 @@ Nu staat het bij container want die staat vast omdat die geen animatie heeft */
 }
 
 .back {
-  background-color: white;
   transform: rotateY(180deg);
 }

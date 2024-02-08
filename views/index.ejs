@@ -6,15 +6,24 @@
           <h1><%= data.name %> <%= data.surname %></h1>
               <p>Frontend designer en developer</p>
     <div class="front-image-container">
-       <img src="<%= data.avatar %>" alt="profielfoto"> 
+       <img src="/images/DC611FB6-ABB0-4968-83B9-6FDFBC6BCC28_1_201_a.jpeg" alt="profielfoto"> 
     </div>
   </div>
     <div class="back">
-
-          
-
-
-
+      <div class="back-content">
+        <div class="biografie">
+          <h2>Biografie</h2>
+            <p> <%= data.bio %> </p>
+        </div>
+      <div class="contactgegevens">
+          <h2>Contactgegevens</h2>
+            <ul>
+              <li><p> E-mail: <%= data.email %> </p></li>
+              <li><p> Telefoonnummer: <%= data.phone_number %> </p</li>
+              <li><p> Github: <%= data.github_handle %> </p</li>
+            </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div> 
