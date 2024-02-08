@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+
+:root {
+
+  --textColor: black;
+  --primaryFont: 'Hahmlet', serif;
+
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: open sans;
+  overflow:hidden;
+  background:#F2EFE6;
+
+}
+h1 {
+  color: var(--textColor);
+  font-family: var(--primaryFont);
+  font-size: 3em;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+  text-transform: uppercase;
+  
+
+}
+p {
+  font-family: var(--primaryFont);
+  color: var(--textColor);
+  font-size: 1.5em;
+  margin: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  color:#FFFDD1;
+  margin-top: 20px;
+}
+h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  color:#FFFDD1;
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+.p2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  color:#FFFDD1;
+  margin-top: 10px;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* hier staat image1 ipv img zodat ik alle fotos kan onderscheiden en verschillende properties kan toepassen */
+.front-image-container {
+  position: relative;
+  /* align-items: center; */
+  top: 1rem;
+  
+
+  img {
+    width: 350px;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+}
+
+.container {
+  width: 450px;
+  height: 600px;
+  perspective: 700px;
+  
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+/* De transition property zorgt ervor dat er een animatie op de 180 graden flip zit */
+/* De preserve-3d property staat er zodat mijn card word behandeld als een 3d object. Zonder deze property liggen de kaarten niet de juiste kant op.*/
+
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  box-shadow: 0 0 20px 20px rgba(50, 50, 50, 0.101);
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+  /* Hier staat backface-visibility hidden zodat elke keer de achterkant niet zichtbaar is */
+
+.front {
+  background: #F2EFE6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Er staat >card bij omdat als je hem alleen op card toepast word het heel buggy als je heen en weer gaat. 
+Nu staat het bij container want die staat vast omdat die geen animatie heeft */
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
